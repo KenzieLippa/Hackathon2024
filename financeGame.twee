@@ -1,0 +1,255 @@
+:: StoryTitle
+financeGame
+
+
+:: StoryData
+{
+  "ifid": "03921BFE-D2F8-4483-899E-0476B52D8253",
+  "format": "Harlowe",
+  "format-version": "3.3.7",
+  "start": "You're Alive!",
+  "zoom": 1
+}
+
+
+:: C1\  {"position":"730,1415","size":"100,100"}
+Finally your mom comes in. She smells funny and she's stumbling a bit. "Hi $yourName, what are you up to? have you been here this whole time? Huh."
+[[I'm hungry]]
+[[Stare angrily]]
+
+
+:: Check on parents {"position":"580,1115","size":"100,100"}
+Double-click this passage to edit it.
+
+
+:: Continue to Play {"position":"730,1265","size":"100,100"}
+It's ok you say, you aren't neglected, your parents are just busy.
+They still love you right?
+(set: $selfEsteem -=1)
+[[C1 <- Continue to Play]]
+
+
+:: Cry {"position":"730,1716","size":"100,100"}
+"Ugh why did I bother with this... I knew this was a mistake! you're exactly like your father... completely useless."
+(set: $selfEsteem -= 1)
+[[Year 1]]
+
+
+:: Cry about your life {"position":"126,312","size":"100,100"}
+You know that's reasnoble, it's been a hard 5 minutes and you need to let it out. 
+[[Fuss till mother comes]]
+[[Sit and be mad]]
+
+
+:: Death {"position":"890,1011","size":"100,100"}
+You have died. It is very sad but was bound to happen someday. 
+You made it to year $age
+you made $money dollars
+you had $knowledge smarts
+you had $friends friends
+you had $selfEsteem self esteem
+and $karma karma
+
+(if: $looks > 10)[You were pretty attractive at least.]
+(if: $looks < 5 and $looks >0)[You were ok looking I guess]
+(if: $looks is 0)[Thank god there are no mirrors where you're going...
+It's ok though, I'm sure you have a great personality!]
+
+
+:: Don't drink the liquid {"position":"1081,839","size":"100,100"}
+Double-click this passage to edit it.
+
+
+:: Drink the liquid {"position":"890,861","size":"100,100"}
+OOf that was a bad idea... you don't feel so good now.
+the world is spinning before you, you look green
+this isn't good
+hopefully someone will come for you soon...
+[[Death]]
+
+
+:: Find something to do {"position":"655,965","size":"100,100"}
+Man you are really good at entertaining yourself! You must be smart!
+either that or maybe you're parents are just really busy
+Now that you think of it, you really haven't seen them in a while... perhaps you should go check on them.
+[[Check on parents]]
+[[Nah they're fine]]
+
+
+:: Fuss till mother comes {"position":"47,488","size":"100,100"}
+You fuss...
+and you fuss...
+and fuss some more...
+and still no one comes.
+so you start to feel a deep sense of sadness
+'why do they not love me?' you wonder
+'am I not interesting?'
+but then suddenly you feel your fussing is getting somewhere as you hear the sound of feet barelling down the hallway.
+"WHAT IS IT?"  a voice calls loudly
+[[Mother!]]
+[[Oh no hide!]]
+
+
+:: Fuss until mother comes {"position":"412,486","size":"100,100"}
+Double-click this passage to edit it.
+
+
+:: Get a job {"position":"487,336","size":"100,100"}
+Silly, you can't get a job, you're tiny! but that's ok, I like you're attitude!
+you can start practicing if you want
+(set: $knowledge to $knowledge + 1)
+your knowledge has been increased to $knowledge
+[[Fuss until mother comes]]
+[[Sit and be mad]] 
+[[Hit the books!]]
+
+
+:: Give up {"position":"955,665","size":"100,100"}
+Well it looks like a liquid so you could drink it if you're bored...
+[[Fuss until mother comes]] 
+[[Sit and be mad]] 
+[[Drink the liquid]] 
+
+
+:: Growl {"position":"580,1841","size":"100,100"}
+"Oh come on now, don't growl. Fine I'll feed you. You're right I have been gone a while you are probably hungry."
+(set: $selfEsteem to $selfEsteem + 1)
+[[Year 1]] 
+
+
+:: Guess the word {"position":"805,665","size":"100,100"}
+(set: $guess to(prompt: "enter the sentence:",""))
+(if: $guess is "danger toxic liquid")[Congrats you can read! I'm so proud of you!
+[[Rejoyce!]]]
+You have no idea what this says do you... well its fine, it looks like a liquid, you could always drink it.
+[[Drink the liquid]]
+[[Don't drink the liquid]]
+
+
+:: Hit the books! {"position":"562,485","size":"100,100"}
+You hit the books like a mad man!
+ouch! that hurts
+you try opening one...
+rats. your thumbs aren't that dexterous.
+Well no matter! you will get this book open if its the last thing you do!
+...
+...
+...
+Well this might not be possible...
+maybe after college.
+[[Fuss until mother comes]] 
+[[Sit and be mad]] 
+[[I WONT GIVE UP!]]
+
+
+:: I WONT GIVE UP! {"position":"880,515","size":"100,100"}
+I admire your tenacity! 
+you finally get the book open, congrats
+...
+but you have no idea what it says.
+there are a few symbols. You can make out the phrase:
+"DNGERA TXCIO QUIDLI"
+[[Guess the word]]
+[[Give up]]
+
+
+:: I'm hungry {"position":"655,1566","size":"100,100"}
+"What do you mean you're hungry? why are you hungry? don't you know where the fridge is?"
+[[Look angry]]
+[[Cry]]
+
+
+:: Look angry {"position":"580,1716","size":"100,100"}
+"What are you angry for? are you kidding me?? You are so entilted, it's not my job to make you happy. Learn some independence please."
+[[Growl]]
+[[Cry]] 
+
+
+:: Mother! {"position":"47,613","size":"100,100"}
+A big woman barges into the room.
+"WHAT PIPSQUEAK?" she shouts. she is sloppy looking and stumbling
+you can't say anything so you smile at her.
+she still looks confused.
+you try gesturing to your mouth 
+"Is there a fly you're trying to smack?"
+you smack your face. this is hopeless.
+it'll be a miracle if you don't starve.
+[[Year 1]] 
+
+
+:: Nah they're fine {"position":"730,1115","size":"100,100"}
+You decide it's not your responsibility to look after them, they are their own people.
+You continue to play with blocks. Maybe someday they'll come back.
+You are kind of feeling hungry though.
+[[Fuss till mother comes]] 
+[[Continue to Play]]
+
+
+:: Oh no hide! {"position":"172,613","size":"100,100"}
+'Mother is very scary' you decide. So you hide in the closet when you hear her in the hall. this of course, may have been an incredibly terrible desicion as the woman dislikes being tricked more than anything else.
+"$yourName!" she screams. "WHERE ARE YOU?"
+you say nothing, smartly I might add, who knows what this woman could be capable of.
+"IF YOU DONT COME OUT NOW I'LL ASSUME YOU HAVE RUN AWAY!"
+(set: $randomnum to (random: 1, 10))
+(if: $randomnum is > 5)[Don't worry though, you weren't found. You'll be ok. [[Rejoyce!]]]
+(if: $randomnum is <= 5)[Uh oh... she found you.
+[[Death]]]
+
+
+:: Rejoyce! {"position":"655,815","size":"100,100"}
+Your intelligence has increased again you little genius
+(set: $knowledge to $knowledge +1)
+intelligence is now: $knowledge
+[[Fuss till mother comes]]
+[[Sit and be mad]] 
+[[Find something to do]]
+
+
+:: Sit and be mad {"position":"280,488","size":"100,100"}
+Double-click this passage to edit it.
+
+
+:: Skip to Year 18 {"position":"730,2216","size":"100,100"}
+Wow what a crazy life you've had up to this point! I can't believe you've made it this far! How impressive. Your high school years were super wild but finally you stumbled your way through. Bet you were supprised about that crazy thing that happened when you were 17 huh.
+But now you're all grown up and ready for college! I bet that's going to be WILD
+(set: $age to 18)
+
+
+:: Stare angrily {"position":"805,1565","size":"100,100"}
+Double-click this passage to edit it.
+
+
+:: Year 1 {"position":"730,1841","size":"100,100"}
+Congrats you're one year older!
+Not much goes on this year which is rather odd considering how much happened last year...
+(set: $age to 1) 
+[[Year 2]]
+
+
+:: Year 2 {"position":"730,1966","size":"100,100"}
+Another year older another year wiser. It's hard to get things done when you're this small, seems like the worlds too big for you right now. Maybe it'll get easier next year.
+(set: $age to 2)
+[[Year 3]]
+
+
+:: Year 3 {"position":"730,2091","size":"100,100"}
+Maybe you better just skip ahead a bit, besides your ability to now notice things you didn't before about people in your life, you really can't do much.
+[[Skip to Year 18]]
+
+
+:: You're Alive! {"position":"425,175","size":"100,100"}
+(set: $yourName to(prompt: "Enter your name: ",""))
+Congrats $yourName! you're alive!
+I bet you're pretty happy with yourself now, alive at last
+problem is... you're BROKE
+well and an infant but that's besides the point.
+[[Cry about your life]]
+[[Get a job]]
+
+(set: $knowledge to 0)
+(set: $money to 0)
+(set: $karma to 0)
+(set: $looks to 0)
+(set: $selfEsteeem to 0)
+(set: $friends to 0)
+(set: $age to 0)
